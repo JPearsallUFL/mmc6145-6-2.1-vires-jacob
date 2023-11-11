@@ -31,7 +31,7 @@ export default withIronSessionApiRoute(
               req.session.destroy()
               return res.status(401)
             }
-            return res.status(200)
+            return res.status(200).json("literally anything")
           }
           catch (error) {
             return res.status(400).json({error: error.message})
