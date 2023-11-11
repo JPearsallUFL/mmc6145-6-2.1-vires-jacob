@@ -8,7 +8,6 @@ import { useBookContext } from "../../context/book"
 import Header from '../../components/header'
 import db from '../../db'
 import styles from '../../styles/Book.module.css'
-import book from '../api/book';
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req, params }) {

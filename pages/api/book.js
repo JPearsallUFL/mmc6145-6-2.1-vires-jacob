@@ -26,8 +26,8 @@ export default withIronSessionApiRoute(
         // TODO: On a DELETE request, remove a book using db.book.remove with request body (must use JSON.parse)
         case "DELETE":
           try {
-            const user = await db.book.remove(req.session.user.id, JSON.parse(req.body).id)
-            if (!user){
+            const deleted = await db.book.remove(req.session.user.id, JSON.parse(req.body).id)
+            if (!deleted){
               req.session.destroy()
               return res.status(401)
             }
